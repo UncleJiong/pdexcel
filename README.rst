@@ -8,7 +8,6 @@ An easy way to export DataFrame objects as tables and charts to excel file.
 
 .. code-block:: python
 
-   import xlsxwriter
    import numpy as np
    import pandas as pd
    from pd2xlsx import *
