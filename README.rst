@@ -2,6 +2,7 @@ df2xlsx
 ==========
 
 An easy way to export DataFrame objects as tables and charts to excel file.
+
 方便、简洁地将Pandas的DataFrame地输出为Excel的表格及图表,
 
 一个简单的例子:
@@ -40,7 +41,10 @@ An easy way to export DataFrame objects as tables and charts to excel file.
    
    # 退出并保存文件
    writer.close()
-.. 
+
+.. image:: https://raw.github.com/UncleJiong/pdexcel/master/example/demo1a.png
+
+.. image:: https://raw.github.com/UncleJiong/pdexcel/master/example/demo1b.png
 
 也可以通过`to_excel`函数更简洁地生成Excel文件:
 
@@ -61,4 +65,8 @@ An easy way to export DataFrame objects as tables and charts to excel file.
                          kwargs_cell={'num_format':'0.00%'})
        # 表格插入Sheet2, 绘直方图
        sheet2 = to_excel(writer2, dfa, chart_type='column')
-.. 
+	   
+
+.. image:: https://raw.github.com/UncleJiong/pdexcel/master/example/demo2a.png
+
+.. image:: https://raw.github.com/UncleJiong/pdexcel/master/example/demo2b.png
