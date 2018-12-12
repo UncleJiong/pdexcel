@@ -7,7 +7,7 @@ An easy way to export DataFrame objects as tables and charts to excel file.
 ## Installation 安装
 
 ```
-pip install https://github.com/UncleJiong/pdexcel.git
+pip install git+https://github.com/UncleJiong/pdexcel.git
 ```
 
 ## Examples
