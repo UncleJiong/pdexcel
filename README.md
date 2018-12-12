@@ -1,8 +1,8 @@
 # pdexcel
 
-An easy way to export DataFrame objects as tables and charts to excel file.
+The library makes it easy to export DataFrame objects as tables/charts in excel format.
 
-方便、简洁地将Pandas的DataFrame地输出为Excel的表格及图表,
+方便、简洁地将Pandas的DataFrame地输出为Excel的表格及图表。
 
 ## Installation 安装
 
