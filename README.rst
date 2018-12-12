@@ -3,9 +3,9 @@ df2xlsx
 
 An easy way to export DataFrame objects as tables and charts to excel file.
 
-æ–¹ä¾¿ã€ç®€æ´åœ°å°†Pandasçš„DataFrameåœ°è¾“å‡ºä¸ºExcelçš„è¡¨æ ¼åŠå›¾è¡¨,
+·½±ã¡¢¼ò½àµØ½«PandasµÄDataFrameµØÊä³öÎªExcelµÄ±í¸ñ¼°Í¼±í,
 
-ä¸€ä¸ªç®€å•çš„ä¾‹å­:
+Ò»¸ö¼òµ¥µÄÀı×Ó:
 
 .. code-block:: python
 
@@ -16,37 +16,37 @@ An easy way to export DataFrame objects as tables and charts to excel file.
    dfa = pd.DataFrame(np.random.rand(14, 2), columns=list('AB'))
    dfb = pd.DataFrame(np.random.rand(10, 4), columns=list('ABCD'))
 
-   # åˆ›å»ºExcelæ–‡ä»¶
+   # ´´½¨ExcelÎÄ¼ş
    writer = ExcelWriter('demo2.xlsx')
 
-   # åˆ›å»ºå·¥ä½œè¡¨Sheet1
+   # ´´½¨¹¤×÷±íSheet1
    sheet1 = writer.add_sheet(sheetname='Sheet1')
-   # æ·»åŠ è¡¨æ ¼1
+   # Ìí¼Ó±í¸ñ1
    table11 = sheet1.add_table(dfa, table_name='Table_1')
-   # æ·»åŠ è¡¨æ ¼2, æ•°å€¼æ ¼å¼ç™¾åˆ†æ¯”ä¸¤ä½å°æ•°ï¼Œåˆ—å®½è®¾ç½®ä¸º8.
+   # Ìí¼Ó±í¸ñ2, ÊıÖµ¸ñÊ½°Ù·Ö±ÈÁ½Î»Ğ¡Êı£¬ÁĞ¿íÉèÖÃÎª8.
    table12 = sheet1.add_table(dfb, dicformat={'num_format':'0.00%'}, width=6)
-   # æ’å…¥å›¾è¡¨, é»˜è®¤ä¸ºæŠ˜çº¿å›¾
+   # ²åÈëÍ¼±í, Ä¬ÈÏÎªÕÛÏßÍ¼
    chart11 = table11.add_chart()
-   # æ’å…¥ç›´æ–¹å›¾, æ ‡é¢˜'Column Chart'
+   # ²åÈëÖ±·½Í¼, ±êÌâ'Column Chart'
    chart12 = table12.add_chart(chart_name='Column Chart', chart_type='column')
-   # æ’å…¥ Aã€Cä¸¤åˆ—æ•°æ®çš„æŠ˜çº¿å›¾, é«˜åº¦ä¸ºé»˜è®¤çš„2å€
+   # ²åÈë A¡¢CÁ½ÁĞÊı¾İµÄÕÛÏßÍ¼, ¸ß¶ÈÎªÄ¬ÈÏµÄ2±¶
    chart13 = table12.add_chart(chart_col=['A','C'], y_scale=2)
    
-   # åˆ›å»ºå·¥ä½œè¡¨Sheet2
+   # ´´½¨¹¤×÷±íSheet2
    sheet2 = writer.add_sheet()
-   # æ’å…¥æŒ‡å®šé£æ ¼çš„è¡¨æ ¼
+   # ²åÈëÖ¸¶¨·ç¸ñµÄ±í¸ñ
    table2 = sheet2.add_table(dfa, tbl_style='Table Style Light 11')
-   # æ’å…¥æŒ‡å®šé£æ ¼çš„å›¾è¡¨
+   # ²åÈëÖ¸¶¨·ç¸ñµÄÍ¼±í
    chart2 = table2.add_chart(chart_style=37)
    
-   # é€€å‡ºå¹¶ä¿å­˜æ–‡ä»¶
+   # ÍË³ö²¢±£´æÎÄ¼ş
    writer.close()
 
 .. image:: https://raw.github.com/UncleJiong/pdexcel/master/example/demo1a.png
 
 .. image:: https://raw.github.com/UncleJiong/pdexcel/master/example/demo1b.png
 
-ä¹Ÿå¯ä»¥é€šè¿‡`to_excel`å‡½æ•°æ›´ç®€æ´åœ°ç”ŸæˆExcelæ–‡ä»¶:
+Ò²¿ÉÒÔÍ¨¹ı`to_excel`º¯Êı¸ü¼ò½àµØÉú³ÉExcelÎÄ¼ş:
 
 .. code-block:: python
 
@@ -58,12 +58,12 @@ An easy way to export DataFrame objects as tables and charts to excel file.
    dfb = pd.DataFrame(np.random.rand(10, 4), columns=list('ABCD'))
 
    with ExcelWriter('demo.xlsx') as writer2:
-       # è¡¨æ ¼æ’å…¥Sheet1, å¯¹Aã€Cå­—æ®µæ•°æ®ç»˜æŠ˜çº¿å›¾
+       # ±í¸ñ²åÈëSheet1, ¶ÔA¡¢C×Ö¶ÎÊı¾İ»æÕÛÏßÍ¼
        sheet1 = to_excel(writer2, dfa, kwargs_chart=dict(chart_col=['A', 'C']))
-       # è¡¨æ ¼æ’å…¥Sheet1, ä¸ç»˜å›¾, æ•°å€¼ä»¥ç™¾åˆ†æ¯”æ ¼å¼ä¿å­˜
+       # ±í¸ñ²åÈëSheet1, ²»»æÍ¼, ÊıÖµÒÔ°Ù·Ö±È¸ñÊ½±£´æ
        sheet1 = to_excel(writer2, dfb, sheet1, chart=False,
                          kwargs_cell={'num_format':'0.00%'})
-       # è¡¨æ ¼æ’å…¥Sheet2, ç»˜ç›´æ–¹å›¾
+       # ±í¸ñ²åÈëSheet2, »æÖ±·½Í¼
        sheet2 = to_excel(writer2, dfa, chart_type='column')
 	   
 
