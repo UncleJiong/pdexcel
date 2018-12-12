@@ -1,4 +1,4 @@
-# df2xlsx
+# pdexcel
 
 An easy way to export DataFrame objects as tables and charts to excel file.
 
@@ -7,7 +7,7 @@ An easy way to export DataFrame objects as tables and charts to excel file.
 ## Installation 安装
 
 ```
-pip install git+https://github.com/UncleJiong/pdexcel.git
+pip install https://github.com/UncleJiong/pdexcel.git
 ```
 
 ## Examples
@@ -17,7 +17,7 @@ pip install git+https://github.com/UncleJiong/pdexcel.git
 ```python
    import numpy as np
    import pandas as pd
-   from pd2xlsx import *
+   from pdexcel import *
    
    dfa = pd.DataFrame(np.random.rand(14, 2), columns=list('AB'))
    dfb = pd.DataFrame(np.random.rand(10, 4), columns=list('ABCD'))
@@ -63,7 +63,7 @@ pip install git+https://github.com/UncleJiong/pdexcel.git
 ```python
    import numpy as np
    import pandas as pd
-   from pd2xlsx import *
+   from pdexcel import *
    
    dfa = pd.DataFrame(np.random.rand(14, 2), columns=list('AB'))
    dfb = pd.DataFrame(np.random.rand(10, 4), columns=list('ABCD'))
