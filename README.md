@@ -7,7 +7,7 @@ The library makes it easy to export DataFrame objects as tables/charts in excel 
 ## Installation 安装
 
 ```
-pip install https://github.com/UncleJiong/pdexcel.git
+pip install git+https://github.com/UncleJiong/pdexcel.git
 ```
 
 ## Examples
